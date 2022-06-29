@@ -1,10 +1,11 @@
 import { Router } from 'express'
-import { getProducts } from '../controllers/products.controller.js'
+import { getProducts, createProduct, updateProduct, deleteProduct, getProduct } from '../controllers/products.controller.js'
+import { upload } from '../helpers/multer.js'
 
 export const router = Router()
 
-router.get('/',  async (req, res) => {
-    const products = await getProducts()
-    res.render('products', {products})
-    //res.json(products)
-})
+router.get('/', getProducts)
+router.post('/', upload, createProduct)
+router.put('/:id', upload, updateProduct)
+router.delete('/:id', deleteProduct)
+router.get('/:id', getProduct)

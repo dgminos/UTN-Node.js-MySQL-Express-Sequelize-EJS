@@ -16,7 +16,7 @@
 
   <body>
     <!--NAVBAR-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#" style="color: white">
           Coffees
@@ -145,10 +145,10 @@
                 <% products.forEach((product)=> { %>
               <div class="col">
                 <div class="card h-100">
-                    <img src="./img/1-alta-mogiana.jpg" class="card-img-top" alt="alta mogiana">
+                    <img src=" <%= product.image %> " class="card-img-top" alt="alta mogiana"/>
                     <div class="card-body">
                     <h5 class="card-title fw-bold"> $ <%= product.priceInARS %> </h5>
-                    <% if(product.origin === ""){ %>
+                    <% if(product.origin === "" || product.variety === ""){ %>
                         <p class="card-text"> <%= product.name %> | <%= product.weightInGrams %> gr.</p> 
                         <% } else { %>
                     <p class="card-text"> <%= product.name %> | <%= product.origin %> | <%= product.weightInGrams %> gr.</p>

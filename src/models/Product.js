@@ -7,13 +7,13 @@ export const Product = db.define('products', {
         primaryKey: true,
         autoIncrement: true
         },
+    image: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
     name: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
-    image: {
-        type: DataTypes.BLOB('long'),
-        allowNull: true,
     },
     priceInARS: {
         type: DataTypes.FLOAT,
