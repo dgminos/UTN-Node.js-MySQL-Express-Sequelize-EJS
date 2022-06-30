@@ -16,7 +16,7 @@ export const Product = db.define('products', {
         allowNull: false,
     },
     priceInARS: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     origin: {
